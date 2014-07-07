@@ -1,0 +1,70 @@
+//Program creates objects to be used by Rectangle class and displays output
+//for each object by utilizing OOP.
+//Michael Dieterle
+//Filename: TestRectangle.java
+
+public class TestRectangle {
+	
+	//main method
+	public static void main(String args[]) {
+
+		//Creates a rectangle with width and height of 1
+		Rectangle rectangle1 = new Rectangle();
+		System.out.println("Hello, I am a Rectangle with a width of " 
+			+ rectangle1.width + ", a height of " 
+			+ rectangle1.height + ",\n an area of " 
+			+ rectangle1.getArea() + ", and a perimeter of " 
+			+ rectangle1.getPerimeter());
+
+		//Creates a rectangle with width of 4 and height of 40
+		Rectangle rectangle2 = new Rectangle(4, 40);
+		System.out.println("Hello, I am a Rectangle with a width of "
+			+ rectangle2.width + ", a height of " 
+			+ rectangle2.height + ",\n an area of "
+			+ rectangle2.getArea() + ", and a perimeter of "
+			+ rectangle2.getPerimeter());
+
+		//Creates a rectangle with width of 3.5 and height of 35.9
+		Rectangle rectangle3 = new Rectangle(3.5, 35.9);
+		System.out.println("Hello, I am a Rectangle with a width of "
+			+ rectangle3.width + ", a height of " 
+			+ rectangle3.height + ",\n and area of "
+			+ rectangle3.getArea() + ", and a perimeter of "
+			+ rectangle3.getPerimeter());
+	}
+}
+
+class Rectangle {
+	double width;
+	double height;
+	
+	//Default Constructor
+	Rectangle() {
+		width = 1;
+		height = 1;
+	}
+	
+	//Constructor
+	Rectangle(double newWidth, double newHeight) {
+		width = newWidth;
+		height = newHeight;
+	}
+	
+	//Accessors
+	double getArea() {
+		return width * height;
+	}
+	
+	double getPerimeter() {
+		return ((width * 2) + (height * 2));
+	}
+	
+	//Mutators
+	void setWidth(double newWidth) {
+		width = newWidth;
+	}
+	
+	void setHeight(double newHeight) {
+		height = newHeight;
+	}
+}
