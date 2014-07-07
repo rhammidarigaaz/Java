@@ -1,0 +1,27 @@
+import java.util.Scanner;
+
+public class QuadraticRoots {
+
+	public static void main(String args[]) {
+		Scanner input= new Scanner(System.in);
+
+		System.out.print("Enter a value for a, b, c:");
+		System.out.print("");
+		double a = input.nextDouble();
+		double b = input.nextDouble();
+		double c = input.nextDouble();
+		
+		double x = 0;
+		x = (-b + (Math.sqrt((b*b - ((4*a*c)))))/ (2*a));
+	
+		double y = 0;
+		y = (-b - (Math.sqrt((b*b - ((4*a*c)))))/ (2*a));
+
+		if (((b*b - ((4*a*c))) < 0) == true) {
+		System.out.println ("There are no real roots");
+		}
+		if (((b*b - ((4*a*c))) < 0) == false) {
+		System.out.println ("The roots are " + x + " or " + y);
+		}
+	}
+}
