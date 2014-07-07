@@ -1,0 +1,56 @@
+//This program reads in a number of integers chosen by the user and displays the highest and lowest integers entered as well as the sum and average of all integers entered.
+//Michael Dieterle
+//Filename: ArrayExercise.java
+
+import javax.swing.*;
+import java.util.Scanner;
+import javax.swing.JOptionPane;
+
+public class ArrayLoop {
+	public static void main(String args[]) {
+
+	//setup variables and scanner
+	int sum = 0;
+	String output = "";
+	Scanner input = new Scanner(System.in);
+	int end = 0;
+	int high = Integer.MIN_VALUE;
+	int low = Integer.MAX_VALUE;
+
+	//declare array of integers
+	int[] a;
+
+	//prompt user for integers
+	System.out.print("Please enter how many integers you would like to input: ");
+	int size = input.nextInt();
+
+	System.out.println("");
+
+	//allocate memory for x integers in array, x = first integer inputted
+	a = new int[size];
+
+	output += "Order\tIntegers\tHighest\tLowest\tSum\tAverage\n";
+
+	for (int i = 0; i < a.length; i++) {
+		System.out.print("Enter an integer: ");
+		a[i] = input.nextInt();	
+		
+		if (a[i] > high) {
+			high = a[i];
+		}
+
+		if (a[i] < low) {
+			low = a[i];
+		}
+
+		sum += a[i];
+		float average = ((float)sum / a.length);
+		output += i + "\t" + a[i] + "\t" + high + "\t" + low + "\t" + sum + "\t" + average + "\n";
+	}
+
+	JTextArea outputArea = new JTextArea(11, 10);
+	outputArea.setText(output);
+
+	JOptionPane.showMessageDialog(null, outputArea, "Results", JOptionPane.INFORMATION_MESSAGE);
+	}
+}
