@@ -1,0 +1,48 @@
+//This program computes the number of positive and negative integers inputted, the sum of the inputted integers, and the average of said integers.  Inputting only 0 resolves the program.
+//Michael Dieterle
+//Filename: RanIntAvg.java
+
+import java.util.Scanner;
+
+public class RanIntAvg {
+	public static void main(String[] args) {
+
+		//Setting up variables
+		int data = 0;
+		int positive = 0;
+		int negative = 0;
+		int sum = 0;
+		boolean end = false;
+
+		//Setting up scanner to read input into data variable
+		Scanner input = new Scanner(System.in);
+		
+
+			while (end == false) {
+			  System.out.print("Enter an integer, the program resolves if it is 0: ");
+			  data = input.nextInt();
+			  sum += data;
+
+			  	if (data < 0) {
+			  	  negative++;
+			  	}
+
+			  	else if (data > 0) {
+			  	  positive++;
+			  	}
+
+			  	if (data == 0) {
+			      end = true;
+				}
+			}
+
+		//Setting average to equal total sum of integers divided by total integers entered w/ ints converted to float
+		float average = ((float)sum / (positive + negative));
+
+		//Output
+		System.out.println ("The number of positives is " + positive);
+		System.out.println ("The number of negatives is " + negative);
+     	System.out.println ("The total is " + sum);
+ 		System.out.println ("The average is " + average);
+	}
+}
