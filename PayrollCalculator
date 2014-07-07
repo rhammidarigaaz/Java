@@ -1,0 +1,48 @@
+//Program reads employee's financial information and print's his/her payroll statement.
+//Name: Michael Dieterle
+//Filename: PayrollCalculator.java
+
+import java.util.Scanner;
+
+public class PayrollCalculator	{
+	public static void main	(String args[])	{
+	  Scanner scanner= new Scanner(System.in);
+
+	  System.out.print("Enter employee's name: ");
+	  String name = scanner.next();
+
+	  System.out.print("Enter number of hours worked in a week: ");
+	  String hours = scanner.next();
+	  double h = Double.parseDouble(hours);
+
+	  System.out.print("Enter hourly pay rate: ");
+	  String rate = scanner.next();
+	  double r = Double.parseDouble(rate);
+
+	  System.out.print("Enter federal tax withholding rate: ");
+	  String federal = scanner.next();
+	  double f = Double.parseDouble(federal);
+
+	  System.out.print("Enter state tax withholding rate: ");
+	  String state = scanner.next();
+	  double s = Double.parseDouble(state);
+
+      System.out.println("");
+      
+      double g = h*r;
+      double fed = f*g;
+      double sta = s*g;
+      double ded = fed + sta;
+      double net = g - ded;
+
+	  System.out.println("Employee Name: " + name);
+	  System.out.println("Hours Worked: " + hours);
+	  System.out.println("Pay Rate: $" + rate);
+	  System.out.println("Gross Pay: $" + g);
+	  System.out.println("Deductions: ");
+	  System.out.println(" Federal Withholding (20.0%): $" + fed);
+	  System.out.println(" State Withholding (9.0%): $" + sta);
+	  System.out.println(" Total Deduction: $" + ded);
+	  System.out.println("Net Pay: $" + net);
+	}
+}
