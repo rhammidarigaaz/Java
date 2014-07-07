@@ -1,0 +1,113 @@
+//Program uses OOP to create a two by two linear equation with inputtable coefficients.
+//Michael Dieterle
+//Filename: testLinearEquation.java
+
+import java.util.Scanner;
+
+public class testLinearEquation {
+	public static void main(String args[]) {
+
+		//Setting up Scanner to read in input
+		Scanner input = new Scanner(System.in);
+
+		//prompting user to input values for variables a-f and reading in values
+		System.out.print("Enter values for a, b, c, d, e, and f"
+		+ " with a space between each: ");
+		double a = input.nextDouble();
+		double b = input.nextDouble();
+		double c = input.nextDouble();
+		double d = input.nextDouble();
+		double e = input.nextDouble();
+		double f = input.nextDouble();
+
+		//builds linear equation object
+		LinearEquation equation = new LinearEquation(a, b, c, d, e, f);
+
+		if (equation.isSolvable() == 1) {
+			System.out.print("x is " + equation.getX() + " y is "
+			+ equation.getY());
+		}
+
+		else {
+			System.out.print("The equation has no solution because values are invalid.");
+		}
+	}
+}
+
+class LinearEquation {
+
+	//declares coefficients
+	private double a;
+	private double b;
+	private double c;
+	private double d;
+	private double e;
+	private double f;
+	public double x;
+	public double y;
+
+	//default constructor
+	public LinearEquation() {
+		a = 0;
+		b = 0;
+		c = 0;
+		d = 0;
+		e = 0;
+		f = 0;
+	}
+
+	//constructor for inputted coefficients
+	public LinearEquation(double inputA, double inputB, double inputC, double inputD,
+	double inputE, double inputF) {
+		a = inputA;
+		b = inputB;
+		c = inputC;
+		d = inputD;
+		e = inputE;
+		f = inputF;
+	}
+
+	//accessors
+	double getA() {
+		return a;
+	}
+
+	double getB() {
+		return b;
+	}
+
+	double getC() {
+		return c;
+	}
+
+	double getD() {
+		return d;
+	}
+
+	double getE() {
+		return e;
+	}
+
+	double getF() {
+		return f;
+	}
+
+	//method to determine whether inputted values yield solvable equation
+	int isSolvable() {
+		if (((a * b) - (b * c)) == 0) {
+			return 0;
+		}
+
+		else {
+			return 1;
+		}		
+	}
+
+	double getX() {
+		return ((e * d) - (b * f)) / ((a * d) - (b * c));
+	}
+
+	double getY() {
+		return ((a * f) - (e * c)) / ((a * d) - (b * c));
+	}
+}
