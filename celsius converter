@@ -1,0 +1,23 @@
+//Program reads a Celsius degree in a double value then converts it to Fahrenheit and displays it in console.
+//Name: Michael Dieterle
+//Filename: CelsiusConverter.java
+
+import java.io.*;
+
+public class CelsiusConverter
+
+{ public static void main (String [] args) throws IOException
+	{
+	  InputStreamReader cf = new InputStreamReader(System.in);
+	  BufferedReader input = new BufferedReader(cf);
+	  
+	  System.out.print("Enter a degree in Celsius: ");
+	  String text = input.readLine();
+	  double c = Double.parseDouble(text);
+	  
+	  double f =(9.0/5)*c + 32;
+	  String output = (f + " Fahrenheit");
+	  	  
+	  System.out.println(c + " Celsius is " + output);
+	}  
+}  
