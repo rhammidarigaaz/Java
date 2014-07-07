@@ -1,0 +1,35 @@
+//Program calculates perimeter of triangle based on three sides of the triangle unless input is invalid in which case it will say so. Uses JOption.panes to print output.  
+//Michael Dieterle
+//Filename: Compumeter
+
+import javax.swing.JOptionPane;
+import java.util.Scanner;
+
+public class Compumeter {
+	public static void main(String[] args) {
+
+		String sideA, sideB, sideC, perimeter;
+
+		sideA = JOptionPane.showInputDialog("Enter first side value: ");
+		sideB = JOptionPane.showInputDialog("Enter second side value: ");
+		sideC = JOptionPane.showInputDialog("Enter third side value: ");
+
+		double a = Double.parseDouble(sideA);
+		double b = Double.parseDouble(sideB);
+		double c = Double.parseDouble(sideC);
+
+		perimeter = "";
+
+		perimeter = "Hello, the values you entered for the first, second, and third sides were: " + a + " " + b + " " + c + "\n";
+		if (a + b < c) {
+            perimeter = "The input is invalid because sides 1 and 2 are less than side 3. The input is valid if the sum of every pair of two edges is greater than the remaining edge." + "\n"; 
+        } else if (a + c < b) {
+            perimeter = "The input is invalid because sides 1 and 3 are less than side 2. The input is valid if the sum of every pair of two edges is greater than the remaining edge." + "\n";
+		} else if (b + c < a) {
+			perimeter = "The input is invalid because sides 2 and 3 are less than side 1. The input is valid if the sum of every pair of two edges is greater than the remaining edge." + "\n";
+		} else perimeter = perimeter + "The perimeter for a triangle with these values is: " + (a + b + c) + "\n" + "Thank you for using Compumeter v1.1!";
+
+		JOptionPane.showMessageDialog(null, perimeter, "Display Message", JOptionPane.INFORMATION_MESSAGE);
+	}
+}
+
