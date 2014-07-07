@@ -1,0 +1,29 @@
+//This program converts feet to meters and vice versa and displays the value in a table.
+//Michael Dieterle
+//Filename: FeetMeteConTable.java
+
+public class FeetMeteConTable {
+    public static void main(String[] args) {
+
+    System.out.printf("%3s\t%3s\t%3s\t%3s\n","FEET", "METERS","METERS", "FEET"); //title line
+
+        for(int i = 1; i <= 10;i++){
+            footToMeter(i);
+            meterToFoot(i*5+15);
+            System.out.println();
+        }
+    }
+
+    //feet to meters table
+    public static double footToMeter(double foot){
+        double meter = 0.305*foot;
+            System.out.printf("%3.1f\t%3.3f\t",foot, meter); //formatting decimal places and spacing
+            return meter;
+    }
+    //meters to feet table 
+    public static double meterToFoot(double meter){
+        double foot = meter/0.305;
+            System.out.printf("%3.1f\t%3.3f\t",meter,foot);//formatting decimal places and spacing
+            return foot;
+    }      
+}
