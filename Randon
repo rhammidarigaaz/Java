@@ -1,0 +1,55 @@
+//The program generates a random number between 1-1000 and prompts the user to guess it.  The program then displays whether the user's guess is too high, too low, or correct and how many guesses they made.  The game then prompts the user to play again or not.
+//Michael Dieterle
+//Filename: Randon.java
+
+import java.util.Random;
+import java.util.Scanner;
+
+public class Randon {
+	public static void main(String[] args) {
+
+		Random rand = new Random();
+		int ntg = rand.nextInt(1001); /*ntg = number to guess*/
+		int not = 0; /*not = number of tries*/
+		Scanner input = new Scanner(System.in);
+		int guess;
+		boolean end = false;
+		boolean play = false;
+
+			while (end == false) {
+
+				while (play == false) {
+					System.out.println("Guess a number between 1 and 1000: ");
+					guess = input.nextInt();
+					not++;
+
+					if (guess == ntg) {
+            			System.out.println("Congratulations.  You guessed the number in " + not + " tries.");
+            			play = true;
+					}
+
+					else if (guess < ntg) {
+						System.out.println("Too low, try again.");
+					}
+
+					else if (guess > ntg) {
+						System.out.println("Too high, try again.");
+					}
+  				}
+
+				System.out.println("Play again? If no type 0.");
+				int again;
+				again = input.nextInt();
+
+				if (again == 0) {//this is I don't want to play again
+					end = true;
+				}
+
+				else if (again != 0) {//this is I do want to play again
+					play = false;
+					ntg = rand.nextInt(1001);
+					not = 0;
+		    	}	
+		   	}//while loop    
+    }//main program
+}//public class
