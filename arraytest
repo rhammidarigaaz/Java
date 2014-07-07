@@ -1,0 +1,41 @@
+//The program has a list of 10 numbers and fetches a value based on the index. It then prints all values on each index, the sum of all numbers, and the average.
+//Michael Dieterle
+//Filename: ArrayTest.java
+
+import javax.swing.*;
+
+public class Atest {
+
+	public static void main(String args[]) {
+
+		int sum = 0;
+		String output = "";
+
+		//declares an array of integers
+		int[] a;
+
+		//allocates memory for 10 integers
+		a = new int[10];
+
+		//Initializing each element in array
+		a[0] = 4;
+		a[1] = 2;
+		a[2] = 42;
+		a[3] = -32;
+		a[4] = 1;
+		a[5] = 23;
+		a[6] = -16;
+		a[7] = 0;
+		a[8] = 12;
+		a[9] = -6;
+
+		for (int i = 0; i < a.length; i++) {
+			sum = (a[0] + a[1] + a[2] + a[3] + a[4] + a[5] + a[6] + a[7] + a[8] + a[9]);
+		}
+
+		//Display the array, the sum of values, and average of values
+		System.out.println("The values in the array are: " + a[0] + " " + a[1] + " " + a[2] + " " + a[3] + " " + a[4] + " " + a[5] + " " + a[6] + " " + a[7] + " " + a[8] + " " + a[9]);
+		System.out.println("The sum of these values is: " + sum);
+		System.out.println("The average of these values is: " + (float)sum / a.length);
+	}
+}
